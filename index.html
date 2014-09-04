@@ -7,9 +7,9 @@
     <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="js/angular-1.2.22.js"></script>
     <script type="text/javascript" src="js/bootstrap-3.2.0.js"></script>
-    <script type="text/javascript" src="js/icheck-2.0.rc1.js"></script>
+    <script type="text/javascript" src="js/icheck-1.0.2.js"></script>
     <!-- load the icheck directive for angular -->
-    <script type="text/javascript" src="js/directives/ui-check.js"></script>
+    <script type="text/javascript" src="js/directives/ui-check-1.0.js"></script>
 
     <!-- load twitter bootstrap just so we can do other styling if we want -->
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -34,7 +34,11 @@
 
                 $scope.radio = {
                     value: "b"
-                }
+                };
+
+                $scope.assign_radio_values = function(e) {
+                    $scope.radio.value = "a";
+                };
             });
         })();
     </script>
@@ -77,6 +81,9 @@
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <div>
+                        <button class="btn btn-primary" ng-click="assign_radio_values($event)">Set Values</button>
+                    </div>
                     <div>
                         <label>
                             <input icheck type="radio" ng-model="radio.value" name="radio" value="a" id="radio.a" />

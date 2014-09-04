@@ -14,7 +14,10 @@
 
                         $scope.$watch($attrs['ngModel'], function(newValue){
                             $(element).icheck('update');
-                        })
+
+                          // we need to see the values
+                          console.log('changed: ', $(element));
+                        });
 
                         return $(element).icheck({
                             checkboxClass: 'icheckbox_square-blue',
@@ -32,7 +35,11 @@
                                 });
                             }
                         });
+
+
                     });
+
+                  console.log('init: ', $(element));
                 }
             };
         });

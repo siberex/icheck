@@ -16,7 +16,7 @@
    * angular program easily.
    */
   angular.module('ui.check', [])
-    .directive('icheck', ['$timeout', '$parse', function ($timeout, $parse) {
+    .directive('icheck', ['$timeout', function ($timeout) {
       return {
         restrict: 'A',
         require: 'ngModel',
@@ -25,7 +25,7 @@
             var value;
             value = $attrs['value'];
 
-            $scope.$watch($attrs['ngModel'], function(newValue){
+            $scope.$watch($attrs['ngModel'], function() {
               $(element).iCheck('update');
             });
 
